@@ -9,6 +9,7 @@ import {
 import { partySizeOptions, tripOptions } from "@/lib/booking-schema";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { AvailabilityCalendar } from "@/components/booking/AvailabilityCalendar";
 
 function FieldError({ message }: { message?: string }) {
   if (!message) return null;
@@ -125,16 +126,8 @@ export function BookingForm({
         </div>
 
         <div>
-          <label htmlFor={`${formId}-preferredDate`} className={labelClasses}>
-            Preferred Date
-          </label>
-          <input
-            id={`${formId}-preferredDate`}
-            name="preferredDate"
-            type="date"
-            required
-            className={inputClasses}
-          />
+          <label className={labelClasses}>Preferred Date</label>
+          <AvailabilityCalendar name="preferredDate" />
           <FieldError message={state.fieldErrors?.preferredDate} />
         </div>
 
@@ -154,7 +147,7 @@ export function BookingForm({
             </option>
             {partySizeOptions.map((size) => (
               <option key={size} value={size}>
-                {size} people
+                {size} {size === "1" ? "person" : "people"}
               </option>
             ))}
           </select>

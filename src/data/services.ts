@@ -3,7 +3,7 @@ export type PriceTier = {
   price: string;
 };
 
-export type ServiceCategory = "Shore" | "Inshore" | "Offshore";
+export type ServiceCategory = "Shore" | "Freshwater" | "Inshore" | "Offshore";
 
 export type Service = {
   slug: string;
@@ -51,6 +51,21 @@ export const services: Service[] = [
       "Our most affordable trip",
     ],
     photo: "/images/catches/matt-snook.jpg",
+  },
+  {
+    slug: "freshwater-bass",
+    category: "Freshwater",
+    name: "Freshwater Fishing",
+    locationNote: "Local lakes & canals",
+    species: ["Peacock Bass", "Largemouth Bass", "Clown Knifefish", "Snakehead"],
+    priceTiers: [{ duration: "4 Hours", price: "$200" }],
+    summary:
+      "Sight-fish the local lakes and canals for South Florida's wild mix of exotics — peacock bass, largemouth, clown knife, and snakehead.",
+    highlights: [
+      "All gear included",
+      "No boat required",
+      "Great for kids & first-timers",
+    ],
   },
   {
     slug: "inshore-on-water",

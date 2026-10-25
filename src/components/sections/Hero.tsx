@@ -19,17 +19,17 @@ export function Hero() {
         aria-hidden="true"
       />
 
-      <Container className="relative flex flex-col items-center gap-6 py-16 text-center sm:py-20 lg:py-24">
+      <Container className="relative flex flex-col items-center gap-5 py-12 text-center sm:py-14 lg:py-16">
         <span className="inline-flex items-center gap-2 rounded-full bg-sand-50/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold-300 ring-1 ring-sand-50/15">
           <Anchor className="h-3.5 w-3.5" />
           {site.contact.locationLabel}
         </span>
 
-        <h1 className="text-display max-w-4xl text-3xl font-bold uppercase leading-[1.05] tracking-wide text-sand-50 sm:text-5xl lg:text-6xl">
+        <h1 className="text-display max-w-4xl text-2xl font-bold uppercase leading-[1.05] tracking-wide text-sand-50 sm:text-4xl lg:text-5xl">
           {site.tagline}
         </h1>
 
-        <p className="max-w-xl text-base leading-relaxed text-sand-100/75 sm:text-lg">
+        <p className="max-w-xl text-sm leading-relaxed text-sand-100/75 sm:text-base">
           {site.description}
         </p>
 
@@ -42,7 +42,7 @@ export function Hero() {
           </Button>
         </div>
 
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-sand-100/70">
+        <div className="mt-2 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-sand-100/70">
           <span className="flex items-center gap-2">
             <ShieldCheck className="h-4 w-4 text-gold-400" />
             USCG Licensed &amp; Insured
