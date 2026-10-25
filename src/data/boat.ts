@@ -7,6 +7,10 @@ export const boatSpecs = [
   { label: "Vessel Name", value: "Weasel" },
   { label: "Make & Model", value: "Orion 29" },
   { label: "Year", value: "2022" },
+  { label: "Length Overall (LOA)", value: "31'10\" (29' hull + integrated bracket)" },
+  { label: "Beam", value: "8'4\"" },
+  { label: "Draft", value: "~20\"" },
+  { label: "Deadrise", value: "24°" },
   { label: "Engines", value: "Twin Suzuki 200HP Four-Stroke" },
   { label: "Fuel Capacity", value: "190 Gallons" },
   // TODO: confirm the exact marina/home port to display publicly.

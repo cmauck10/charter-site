@@ -43,12 +43,12 @@ export default function BoatGearPage() {
         description="A 2022 Orion 29 center console, fully rigged for offshore fishing and cruising with a comprehensive Garmin electronics package."
       />
 
-      <section className="bg-sand-100 py-20 sm:py-24">
+      <section className="bg-sand-100 py-10 sm:py-14">
         <Container className="grid items-start gap-12 lg:grid-cols-2">
           <Photo
-            src="/images/boat/profile-running-2.jpg"
+            src="/images/boat/profile-running-2-tight.jpg"
             alt={`${boatName}, the 2022 Orion 29, running on the water`}
-            aspect="aspect-[3/4]"
+            aspect="aspect-[8/7]"
             priority
           />
 
