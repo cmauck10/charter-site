@@ -144,6 +144,7 @@ export const services: Service[] = [
 
 export const serviceCategories: ServiceCategory[] = [
   "Shore",
+  "Freshwater",
   "Inshore",
   "Offshore",
 ];

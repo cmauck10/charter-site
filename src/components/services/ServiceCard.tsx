@@ -1,84 +1,69 @@
-import { CheckCircle2, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { Photo } from "@/components/ui/Photo";
 import type { Service } from "@/data/services";
 
-export function ServiceCard({
-  service,
-  reverse = false,
-}: {
-  service: Service;
-  reverse?: boolean;
-}) {
-  const imageClassName = reverse ? "lg:order-last" : undefined;
-
+/** Compact, scannable trip card — designed to fit many per screen in a grid. */
+export function ServiceCard({ service }: { service: Service }) {
   return (
     <div
       id={service.slug}
-      className="grid gap-8 rounded-2xl bg-white p-6 shadow-[0_12px_30px_-18px_rgba(13,27,38,0.25)] sm:p-8 lg:grid-cols-[1fr_1.3fr] lg:items-center"
+      className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-[0_8px_20px_-16px_rgba(13,27,38,0.3)] transition-shadow hover:shadow-[0_14px_28px_-16px_rgba(13,27,38,0.35)]"
     >
-      {service.photo ? (
-        <Photo
-          src={service.photo}
-          alt={`${service.name} — ${service.species.join(", ")}`}
-          aspect="aspect-[4/3]"
-          className={imageClassName}
-        />
-      ) : (
-        <ImagePlaceholder
-          label={service.name}
-          aspect="aspect-[4/3]"
-          className={imageClassName}
-        />
-      )}
+      <div className="relative">
+        {service.photo ? (
+          <Photo
+            src={service.photo}
+            alt={`${service.name} — ${service.species.join(", ")}`}
+            aspect="aspect-[4/3]"
+            rounded="rounded-none"
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          />
+        ) : (
+          <ImagePlaceholder
+            label={service.name}
+            aspect="aspect-[4/3]"
+            rounded="rounded-none"
+          />
+        )}
+        {service.badge && (
+          <Badge tone="gold" className="absolute left-3 top-3">
+            {service.badge}
+          </Badge>
+        )}
+      </div>
 
-      <div>
-        <div className="flex flex-wrap items-center gap-3">
-          <h3 className="text-display text-2xl font-bold uppercase tracking-wide text-navy-950">
-            {service.name}
-          </h3>
-          {service.badge && <Badge tone="gold">{service.badge}</Badge>}
-        </div>
+      <div className="flex flex-1 flex-col p-4">
+        <h3 className="text-display text-base font-bold uppercase tracking-wide text-navy-950">
+          {service.name}
+        </h3>
 
-        <p className="mt-3 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-ink-500">
-          <MapPin className="h-4 w-4 text-ocean-600" />
-          {service.locationNote}
+        <p className="mt-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-ink-500">
+          <MapPin className="h-3.5 w-3.5 flex-shrink-0 text-ocean-600" />
+          <span className="truncate">{service.locationNote}</span>
         </p>
 
-        <p className="mt-1.5 text-xs font-bold uppercase tracking-wide text-ocean-600">
-          Targeting: {service.species.join(" • ")}
+        <p className="mt-1.5 text-[11px] font-bold uppercase tracking-wide text-ocean-600">
+          {service.species.join(" • ")}
         </p>
 
-        <p className="mt-4 text-sm leading-relaxed text-ink-500 sm:text-base">
-          {service.summary}
-        </p>
-
-        <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
-          {service.highlights.map((h) => (
-            <li key={h} className="flex items-start gap-2 text-sm text-ink-700">
-              <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-ocean-600" />
-              {h}
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-5 border-t border-sand-200 pt-6">
-          <div className="flex gap-6">
+        <div className="mt-3 flex flex-1 items-end justify-between gap-3 border-t border-sand-200 pt-3">
+          <div className="flex gap-4">
             {service.priceTiers.map((tier) => (
               <div key={tier.duration}>
-                <p className="text-[10px] font-semibold uppercase tracking-wide text-ink-300">
+                <p className="text-[9px] font-semibold uppercase tracking-wide text-ink-300">
                   {tier.duration}
                 </p>
-                <p className="text-display text-2xl font-bold text-navy-950">
+                <p className="text-display text-lg font-bold text-navy-950">
                   {tier.price}
                 </p>
               </div>
             ))}
           </div>
-          <Button href={`/book?trip=${service.slug}`} variant="gold" size="md">
-            Book This Trip
+          <Button href={`/book?trip=${service.slug}`} variant="gold" size="sm">
+            Book
           </Button>
         </div>
       </div>

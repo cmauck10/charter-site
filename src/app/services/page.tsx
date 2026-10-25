@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 
 const categoryBlurb: Record<string, string> = {
   Shore: "No boat required — just hit the sand and fish.",
+  Freshwater: "Lakes and canals for South Florida's wild exotics.",
   Inshore: "Bridges and backwaters for snook, shark, and tarpon.",
   Offshore: "Reef, trolling, and deep-drop trips for serious bites.",
 };
@@ -38,11 +39,11 @@ export default function ServicesPage() {
             key={category}
             className={
               categoryIndex % 2 === 0
-                ? "bg-sand-100 py-20 sm:py-24"
-                : "bg-sand-200/70 py-20 sm:py-24"
+                ? "bg-sand-100 py-12 sm:py-14"
+                : "bg-sand-200/70 py-12 sm:py-14"
             }
           >
-            <Container className="space-y-8">
+            <Container className="space-y-6">
               <SectionHeading
                 eyebrow={category}
                 title={`${category} Trips`}
@@ -50,13 +51,9 @@ export default function ServicesPage() {
                 align="left"
               />
 
-              <div className="space-y-8">
-                {categoryServices.map((service, i) => (
-                  <ServiceCard
-                    key={service.slug}
-                    service={service}
-                    reverse={i % 2 === 1}
-                  />
+              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {categoryServices.map((service) => (
+                  <ServiceCard key={service.slug} service={service} />
                 ))}
               </div>
             </Container>
@@ -64,7 +61,7 @@ export default function ServicesPage() {
         );
       })}
 
-      <section className="bg-navy-950 py-20 sm:py-24">
+      <section className="bg-navy-950 py-14 sm:py-16">
         <Container className="max-w-3xl">
           <SectionHeading
             eyebrow="Good To Know"
@@ -72,7 +69,7 @@ export default function ServicesPage() {
             tone="light"
           />
 
-          <div className="mt-10 divide-y divide-sand-50/10 rounded-2xl bg-sand-50/5">
+          <div className="mt-8 divide-y divide-sand-50/10 rounded-2xl bg-sand-50/5">
             {faq.map((item) => (
               <details key={item.question} className="group p-6">
                 <summary className="flex cursor-pointer items-center justify-between gap-4 text-sm font-semibold text-sand-50 sm:text-base [&::-webkit-details-marker]:hidden">

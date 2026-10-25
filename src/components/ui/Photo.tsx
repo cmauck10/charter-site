@@ -6,6 +6,7 @@ export function Photo({
   src,
   alt,
   aspect = "aspect-[4/3]",
+  rounded = "rounded-2xl",
   className,
   priority,
   sizes = "(min-width: 1024px) 50vw, 100vw",
@@ -13,6 +14,8 @@ export function Photo({
   src: string;
   alt: string;
   aspect?: string;
+  /** Corner radius utility class — pass `"rounded-none"` when a parent already clips corners. */
+  rounded?: string;
   className?: string;
   priority?: boolean;
   sizes?: string;
@@ -20,7 +23,8 @@ export function Photo({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-2xl bg-navy-900",
+        "relative overflow-hidden bg-navy-900",
+        rounded,
         aspect,
         className,
       )}

@@ -12,17 +12,21 @@ export function ImagePlaceholder({
   label = "Photo coming soon",
   icon: Icon = Camera,
   aspect = "aspect-[4/3]",
+  rounded = "rounded-2xl",
   className,
 }: {
   label?: string;
   icon?: LucideIcon;
   aspect?: string;
+  /** Corner radius utility class — pass `"rounded-none"` when a parent already clips corners. */
+  rounded?: string;
   className?: string;
 }) {
   return (
     <div
       className={cn(
-        "relative flex items-center justify-center overflow-hidden rounded-2xl border border-dashed border-navy-800/15 bg-gradient-to-br from-navy-800 via-navy-900 to-ocean-700",
+        "relative flex items-center justify-center overflow-hidden border border-dashed border-navy-800/15 bg-gradient-to-br from-navy-800 via-navy-900 to-ocean-700",
+        rounded,
         aspect,
         className,
       )}
