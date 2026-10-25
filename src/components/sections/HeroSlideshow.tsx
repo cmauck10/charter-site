@@ -51,6 +51,18 @@ const slides = [
     src: "/images/catches/dawson-king-mackerel.jpg",
     alt: "Dawson Proodian holding a king mackerel at sunset",
   },
+  {
+    src: "/images/catches/dawson-tuna.jpg",
+    alt: "Dawson Proodian holding a yellowfin tuna offshore",
+  },
+  {
+    src: "/images/catches/dawson-mahi-2.jpg",
+    alt: "Dawson Proodian holding a mahi mahi",
+  },
+  {
+    src: "/images/catches/dawson-snapper.jpg",
+    alt: "Dawson Proodian holding a double catch of mutton snapper",
+  },
 ];
 
 const INTERVAL_MS = 4500;

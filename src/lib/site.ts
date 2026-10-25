@@ -42,6 +42,7 @@ export const site = {
     { href: "/", label: "Home" },
     { href: "/services", label: "Trips & Pricing" },
     { href: "/boat-gear", label: "Boat & Gear" },
+    { href: "/captains", label: "Our Captains" },
     { href: "/about", label: "About" },
   ],
 

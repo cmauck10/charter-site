@@ -125,20 +125,20 @@ export const services: Service[] = [
     category: "Offshore",
     name: "Offshore Game Fishing",
     locationNote: "Open water trolling",
-    species: ["Wahoo", "King Mackerel"],
+    species: ["Wahoo", "King Mackerel", "Mahi Mahi", "Tuna"],
     priceTiers: [
       { duration: "Half Day", price: "$750" },
       { duration: "Full Day", price: "$1,200" },
     ],
     summary:
-      "High-speed trolling for wahoo and king mackerel on Rupp outriggers — fast fish, hard runs, big rewards.",
+      "High-speed trolling for wahoo, king mackerel, mahi, and tuna on Rupp outriggers — fast fish, hard runs, big rewards.",
     highlights: [
       "All gear included",
       "Half or full day options",
       "Multi-line trolling spread",
     ],
     badge: "Most Popular",
-    photo: "/images/catches/dawson-wahoo.jpg",
+    photo: "/images/catches/dawson-mahi.jpg",
   },
   {
     slug: "offshore-swordfish",
