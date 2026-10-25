@@ -46,7 +46,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex min-h-full flex-col bg-sand-100 text-ink-900">
         <Header />
-        <main className="flex-1 pb-20 lg:pb-0">{children}</main>
+        <main className="flex-1 pt-20 pb-20 lg:pb-0">{children}</main>
         <Footer />
         <MobileStickyCta />
       </body>
