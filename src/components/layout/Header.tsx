@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Anchor, Menu, Phone, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { site } from "@/lib/site";
@@ -24,23 +25,16 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-sand-50/10 bg-navy-950/95 backdrop-blur-sm">
-      <Container className="flex h-18 items-center justify-between py-3">
-        <Link
-          href="/"
-          className="flex items-center gap-2.5 text-sand-50"
-          aria-label={`${site.name} — home`}
-        >
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-500 text-navy-950">
-            <Anchor className="h-5 w-5" strokeWidth={2.5} />
-          </span>
-          <span className="text-display flex flex-col leading-tight">
-            <span className="text-base font-bold uppercase tracking-wide sm:text-lg">
-              {site.shortName}
-            </span>
-            <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-ocean-300">
-              Charters
-            </span>
-          </span>
+      <Container className="flex h-20 items-center justify-between py-2">
+        <Link href="/" className="flex items-center" aria-label={`${site.name} — home`}>
+          <Image
+            src="/brand/logo-horizontal.png"
+            alt=""
+            width={944}
+            height={280}
+            priority
+            className="h-12 w-auto sm:h-14"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">

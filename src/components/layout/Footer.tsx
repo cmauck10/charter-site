@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Anchor, Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { FacebookIcon, InstagramIcon } from "@/components/ui/SocialIcons";
 import { site } from "@/lib/site";
@@ -15,13 +16,14 @@ export function Footer() {
     <footer className="bg-navy-950 text-sand-100">
       <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Link href="/" className="flex items-center gap-2.5 text-sand-50">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold-500 text-navy-950">
-              <Anchor className="h-4.5 w-4.5" strokeWidth={2.5} />
-            </span>
-            <span className="text-display text-base font-bold uppercase tracking-wide">
-              {site.shortName}
-            </span>
+          <Link href="/" className="flex items-center" aria-label={`${site.name} — home`}>
+            <Image
+              src="/brand/logo-horizontal.png"
+              alt=""
+              width={944}
+              height={280}
+              className="h-9 w-auto"
+            />
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-sand-100/70">
             {site.description}
