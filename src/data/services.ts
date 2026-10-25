@@ -3,7 +3,12 @@ export type PriceTier = {
   price: string;
 };
 
-export type ServiceCategory = "Shore" | "Freshwater" | "Inshore" | "Offshore";
+export type ServiceCategory =
+  | "Shore"
+  | "Freshwater"
+  | "Inshore"
+  | "Offshore"
+  | "Cruises";
 
 export type Service = {
   slug: string;
@@ -157,6 +162,58 @@ export const services: Service[] = [
     badge: "Premium Trip",
     photo: "/images/catches/dawson-swordfish.jpg",
   },
+  {
+    slug: "cruise-daytime",
+    category: "Cruises",
+    name: "Daytime Cruise / Sightseeing",
+    locationNote: "Peanut Island, Intracoastal & beyond",
+    species: ["Dolphins", "Birds"],
+    priceTiers: [
+      { duration: "Half Day", price: "$400" },
+      { duration: "Full Day", price: "$750" },
+    ],
+    summary:
+      "Enjoy fun in the sun with options for Peanut Island, the intracoastal, and sightseeing for dolphins, birds, and more.",
+    highlights: [
+      "Peanut Island stop",
+      "Intracoastal cruising",
+      "Great for families & groups",
+    ],
+  },
+  {
+    slug: "cruise-sunset",
+    category: "Cruises",
+    name: "Sunset Cruise",
+    locationNote: "Intracoastal waterway",
+    species: ["Sunset Views"],
+    priceTiers: [
+      { duration: "2 Hours", price: "$250" },
+      { duration: "4 Hours", price: "$400" },
+    ],
+    summary: "Enjoy beautiful sunsets cruising the intracoastal.",
+    highlights: [
+      "Prime sunset timing",
+      "Intracoastal cruising",
+      "Great for date night or small groups",
+    ],
+  },
+  {
+    slug: "cruise-night",
+    category: "Cruises",
+    name: "Night Cruise",
+    locationNote: "Downtown Clematis & city skyline",
+    species: ["City Skyline"],
+    priceTiers: [
+      { duration: "2 Hours", price: "$250" },
+      { duration: "4 Hours", price: "$400" },
+    ],
+    summary: "Enjoy scenic views of the city skyline and downtown Clematis.",
+    highlights: [
+      "Scenic skyline views",
+      "Downtown Clematis",
+      "Great for a unique night out",
+    ],
+  },
 ];
 
 export const serviceCategories: ServiceCategory[] = [
@@ -164,6 +221,7 @@ export const serviceCategories: ServiceCategory[] = [
   "Inshore",
   "Shore",
   "Freshwater",
+  "Cruises",
 ];
 
 /** One trip per category for homepage preview — all three now have real action shots. */

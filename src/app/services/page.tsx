@@ -19,6 +19,16 @@ const categoryBlurb: Record<string, string> = {
   Freshwater: "Lakes and canals for South Florida's wild exotics.",
   Inshore: "Bridges and backwaters for snook, shark, and tarpon.",
   Offshore: "Reef, trolling, and deep-drop trips for serious bites.",
+  Cruises:
+    "Relax on the water with daytime cruises, sunset views, and a little South Florida exploring.",
+};
+
+const categoryTitle: Record<string, string> = {
+  Shore: "Shore Trips",
+  Freshwater: "Freshwater Trips",
+  Inshore: "Inshore Trips",
+  Offshore: "Offshore Trips",
+  Cruises: "Cruises & Sightseeing",
 };
 
 export default function ServicesPage() {
@@ -46,7 +56,7 @@ export default function ServicesPage() {
             <Container className="space-y-6">
               <SectionHeading
                 eyebrow={category}
-                title={`${category} Trips`}
+                title={categoryTitle[category]}
                 description={categoryBlurb[category]}
                 align="left"
               />
