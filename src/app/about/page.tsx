@@ -40,16 +40,15 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About Us"
         title="Two Friends, One Boat, A Lifetime Of Fishing"
         description="Fishers of Men Charters is run by two lifelong friends from Wellington, Florida, who turned a shared passion into a business."
       />
 
-      <section className="bg-navy-950 py-20 sm:py-24">
+      <section className="bg-sand-100 py-20 sm:py-24">
         <Container>
           <SectionHeading
+            eyebrow="Our Mission"
             title="More Than A Day On The Water"
-            tone="light"
             description={
               <>
                 Fishers of Men Charters takes its name from Matthew
@@ -65,10 +64,12 @@ export default function AboutPage() {
 
           <div className="mx-auto mt-10 grid max-w-3xl gap-5 sm:grid-cols-2">
             <VerseCard
+              tone="dark"
               verse="Come, follow me, and I will send you out to fish for people."
               reference="Matthew 4:19"
             />
             <VerseCard
+              tone="dark"
               verse="The heavens declare the glory of God; the skies proclaim the work of his hands."
               reference="Psalm 19:1"
             />
@@ -76,23 +77,27 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-sand-200/70 py-20 sm:py-24">
+      <section className="bg-navy-950 py-20 sm:py-24">
         <Container>
-          <SectionHeading eyebrow="Our Values" title="What Drives Every Trip" />
+          <SectionHeading
+            eyebrow="Our Values"
+            title="What Drives Every Trip"
+            tone="light"
+          />
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {values.map(({ icon: Icon, title, text }) => (
               <div
                 key={title}
-                className="rounded-2xl border border-navy-900/5 bg-white p-6 shadow-[0_12px_30px_-18px_rgba(13,27,38,0.25)]"
+                className="rounded-2xl border border-sand-50/10 bg-sand-50/5 p-6"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-950 text-gold-400">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-500 text-navy-950">
                   <Icon className="h-6 w-6" strokeWidth={2} />
                 </span>
-                <h3 className="text-display mt-5 text-base font-bold uppercase tracking-wide text-navy-950">
+                <h3 className="text-display mt-5 text-base font-bold uppercase tracking-wide text-sand-50">
                   {title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-500">
+                <p className="mt-2 text-sm leading-relaxed text-sand-100/70">
                   {text}
                 </p>
               </div>

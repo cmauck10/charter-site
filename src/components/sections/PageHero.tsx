@@ -6,7 +6,7 @@ export function PageHero({
   title,
   description,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   description?: string;
 }) {
@@ -14,9 +14,11 @@ export function PageHero({
     <section className="relative overflow-hidden bg-navy-950">
       <div className="bg-grid-navy bg-radial-gold absolute inset-0" />
       <Container className="relative py-8 text-center sm:py-10">
-        <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold-300">
-          {eyebrow}
-        </p>
+        {eyebrow && (
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold-300">
+            {eyebrow}
+          </p>
+        )}
         <h1 className="text-display mx-auto mt-2 max-w-3xl text-2xl font-bold uppercase leading-tight tracking-wide text-sand-50 sm:text-3xl">
           {title}
         </h1>

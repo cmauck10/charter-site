@@ -24,7 +24,7 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-sand-50/10 bg-navy-950/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 transform-gpu border-b border-sand-50/10 bg-navy-950/95 backdrop-blur-sm will-change-transform">
       <Container className="flex h-20 items-center justify-between py-2">
         <Link href="/" className="flex items-center" aria-label={`${site.name} — home`}>
           <Image
