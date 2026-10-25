@@ -23,10 +23,24 @@ export function Header() {
     setOpen(false);
   }
 
+  // Next.js only resets scroll position on an actual route change. Clicking
+  // a nav link while already on that page (or just wanting a hard reset)
+  // needs an explicit scroll-to-top so the header always lands you back at
+  // the top of the page.
+  const handleNavClick = () => {
+    setOpen(false);
+    window.scrollTo({ top: 0, behavior: "instant" });
+  };
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-sand-50/10 bg-navy-950/95 backdrop-blur-sm">
       <Container className="flex h-20 items-center justify-between py-2">
-        <Link href="/" className="flex items-center" aria-label={`${site.name} — home`}>
+        <Link
+          href="/"
+          onClick={handleNavClick}
+          className="flex items-center"
+          aria-label={`${site.name} — home`}
+        >
           <Image
             src="/brand/logo-horizontal.png"
             alt=""
@@ -46,6 +60,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={handleNavClick}
                 className={cn(
                   "text-sm font-semibold uppercase tracking-wide transition-colors",
                   active
@@ -90,6 +105,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={handleNavClick}
                 className="rounded-lg px-3 py-3 text-sm font-semibold uppercase tracking-wide text-sand-100/90 hover:bg-navy-900 hover:text-sand-50"
               >
                 {item.label}
