@@ -179,6 +179,7 @@ export const services: Service[] = [
       "Intracoastal cruising",
       "Great for families & groups",
     ],
+    photo: "/images/cruises/cruise-daytime.jpg",
   },
   {
     slug: "cruise-sunset",
@@ -196,6 +197,7 @@ export const services: Service[] = [
       "Intracoastal cruising",
       "Great for date night or small groups",
     ],
+    photo: "/images/cruises/cruise-sunset.jpg",
   },
   {
     slug: "cruise-night",
@@ -213,6 +215,7 @@ export const services: Service[] = [
       "Downtown Clematis",
       "Great for a unique night out",
     ],
+    photo: "/images/cruises/cruise-night.jpg",
   },
 ];
 
