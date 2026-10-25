@@ -202,8 +202,8 @@ export function AvailabilityCalendar({ name }: { name: string }) {
                   className={cn(
                     "aspect-square rounded-md text-[11px] font-semibold transition-colors",
                     info
-                      ? "text-navy-950 hover:bg-gold-200"
-                      : "cursor-not-allowed text-ink-200",
+                      ? "bg-gold-300 text-navy-950 hover:bg-gold-400"
+                      : "cursor-not-allowed text-ink-300",
                     isSelected &&
                       "bg-gold-500 text-navy-950 hover:bg-gold-500",
                   )}
