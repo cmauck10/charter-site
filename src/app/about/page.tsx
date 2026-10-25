@@ -88,14 +88,21 @@ export default function AboutPage() {
             description="Matt and Dawson have been friends since birth, growing up together in Wellington, Florida — and fishing has always been the thread that ties them together."
           />
 
-          <Photo
-            src="/images/captains/matt-and-dawson-tuna.jpg"
-            alt="Captain Matt Mauck and Dawson Proodian holding a double catch of yellowfin tuna"
-            aspect="aspect-[16/10]"
-            className="mt-10"
-            sizes="100vw"
-            priority
-          />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            <Photo
+              src="/images/captains/matt-and-dawson-tuna.jpg"
+              alt="Captain Matt Mauck and Dawson Proodian holding a double catch of yellowfin tuna"
+              aspect="aspect-[4/3]"
+              sizes="(min-width: 640px) 50vw, 100vw"
+              priority
+            />
+            <Photo
+              src="/images/captains/matt-and-dawson-tarpon.jpg"
+              alt="Captain Matt Mauck and Dawson Proodian holding a massive tarpon together in the surf"
+              aspect="aspect-[4/3]"
+              sizes="(min-width: 640px) 50vw, 100vw"
+            />
+          </div>
 
           <div className="mt-10 grid gap-8 sm:grid-cols-2">
             {captains.map((captain) => (
