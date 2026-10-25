@@ -37,6 +37,22 @@ export const services: Service[] = [
     photo: "/images/catches/matt-shore-shark.jpg",
   },
   {
+    slug: "shore-tarpon",
+    category: "Shore",
+    name: "Shore Tarpon Fishing",
+    locationNote: "From the beach — no boat needed",
+    species: ["Tarpon"],
+    priceTiers: [{ duration: "4 Hours", price: "$350" }],
+    summary:
+      "Sight-cast to migrating tarpon rolling just off the beach — one of the toughest, most rewarding fights you can find from shore.",
+    highlights: [
+      "All gear included",
+      "No boat required",
+      "Bucket-list shore catch",
+    ],
+    photo: "/images/catches/matt-tarpon-surf.jpg",
+  },
+  {
     slug: "inshore-bridge",
     category: "Inshore",
     name: "Bridge Fishing",
@@ -66,6 +82,7 @@ export const services: Service[] = [
       "No boat required",
       "Great for kids & first-timers",
     ],
+    photo: "/images/catches/matt-bass.jpg",
   },
   {
     slug: "inshore-on-water",
@@ -143,10 +160,10 @@ export const services: Service[] = [
 ];
 
 export const serviceCategories: ServiceCategory[] = [
+  "Offshore",
+  "Inshore",
   "Shore",
   "Freshwater",
-  "Inshore",
-  "Offshore",
 ];
 
 /** One trip per category for homepage preview — all three now have real action shots. */
